@@ -8,7 +8,7 @@
         <div class="hero-text">
             <h1>Renta tu auto ideal con nosotros</h1>
             <p>Conduce con libertad, comodidad y seguridad.</p>
-            <a href="#vehiculos" class="btn">Ver Vehículos</a>
+            <a href="#vehiculos" class="btn btn-outline-dark">Ver Vehículos</a>
         </div>
     </section>
 

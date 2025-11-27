@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2025 at 12:42 AM
+-- Generation Time: Nov 24, 2025 at 12:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -18,10 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rentcar_express`
+-- Database: `rentcar_db`
 --
-CREATE DATABASE IF NOT EXISTS `rentcar_express` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `rentcar_express`;
+CREATE DATABASE IF NOT EXISTS `rentcar_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `rentcar_db`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carros`
+--
+
+CREATE TABLE `carros` (
+  `Id` int(11) NOT NULL,
+  `Marca` varchar(50) NOT NULL,
+  `Modelo` varchar(50) NOT NULL,
+  `Version` varchar(50) NOT NULL,
+  `Year` int(11) NOT NULL,
+  `Precio` decimal(10,2) NOT NULL,
+  `Img` varchar(255) DEFAULT NULL,
+  `Fecha_registro` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -40,9 +58,17 @@ CREATE TABLE `solicitudes` (
   `Fecha_registro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `carros`
+--
+ALTER TABLE `carros`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `solicitudes`
@@ -55,10 +81,16 @@ ALTER TABLE `solicitudes`
 --
 
 --
+-- AUTO_INCREMENT for table `carros`
+--
+ALTER TABLE `carros`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `solicitudes`
 --
 ALTER TABLE `solicitudes`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
